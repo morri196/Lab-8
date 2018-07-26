@@ -14,18 +14,18 @@ public class Lab8 {
 		int studentID = 0;
 		for (int i = 0; i < 8; i++) {
 			System.out.println( i + 1 + "." + student[i]);//print out all student names
-			}
+		}
+		int favorite = 0;
+		
 		try {	//to catch exceptions
 			System.out.println("Which student would you like to learn more about? (enter number 1-8) ");
 			studentID = scnr.nextInt();
-			}	catch (Exception ex) {
-			System.out.println("Please enter a valid entry 1-8. ");
-			}
+				
 			
 			
 			System.out.println("What would you like to know about " + student[studentID - 1] + "? Favorite food or hobby? ( enter \"1 \" for food or \"2\" for hobby )");
-			int favorite = scnr.nextInt();
-			
+			favorite = scnr.nextInt();
+		
 			do {
 			if (favorite == 1) {
 				System.out.println( student[studentID - 1] + "'s favorite hobby is " + hobby[studentID - 1] + "." + " Would you like to know more? (y/n) ");
@@ -62,16 +62,11 @@ public class Lab8 {
 				 
 				 
 				} 
+			} catch (ArrayIndexOutOfBoundsException ex) {
+				System.out.println("Please enter a valid entry 1-8. ");
+				}
 			} while (favorite == 1 || favorite == 2);
-			
-			
-			//}
-			//catch (NumberFormatException ex) {
-				//System.out.println("Please enter a valid input. ( enter \"h \" for food or \"f\" for hobby ) ");
-			//}
 		
-		//System.out.println("goodbye!!");
-	
 	}
 }
 
